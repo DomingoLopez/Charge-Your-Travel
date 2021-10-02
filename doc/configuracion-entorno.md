@@ -15,7 +15,7 @@ ssh-keygen -t ed25519 -C "domin68914@gmail.com"
 
 donde -t indica la firma, en este caso [ed25519](https://ed25519.cr.yp.to/index.html) y -C para añadir un comentario con nuestro correo.
 
-![Generando par público - privado](/configuracion-entorno-img/generar-ssh-pair.png)
+![Generando par público - privado](./configuracion-entorno-img/generar-ssh-pair.png)
 
 Esto genera un par de clave público - privada en ~/.ssh/
 
@@ -25,7 +25,7 @@ A continuación las añadimos al agente ssh. En primer lugar comprobamos que el 
 eval "$(ssh-agent -s)"
 ```
 
-![Comprobar que el agente está running](/configuracion-entorno-img/ssh-agent.png)
+![Comprobar que el agente está running](./configuracion-entorno-img/ssh-agent.png)
 
 y posteriormente añadimos la clave privada al agente con 
 
@@ -33,7 +33,7 @@ y posteriormente añadimos la clave privada al agente con
 ssh-add ~/.ssh/id_ed25519
 ```
 
-![Añadir clave al agente](/configuracion-entorno-img/ssh-agent-add.png)
+![Añadir clave al agente](./configuracion-entorno-img/ssh-agent-add.png)
 
 
 #### Subida de clave pública a github :key:
@@ -51,7 +51,7 @@ gh ssh-key add ~/.ssh/id_ed25519.pub --title "Linux Mint MSI"
 
 Como vemos, hemos subido nuestra clave pública al almacén de claves de github:
 
-![Utilizando gh para subir clave ssh](/configuracion-entorno-img/gh-add-key-github.png)
+![Utilizando gh para subir clave ssh](./configuracion-entorno-img/gh-add-key-github.png)
 
 ### Configuración del nombre y correo electrónico en git
 
