@@ -1,2 +1,7 @@
-# Charge-Your-Travel
-Repositorio principal de la asignatura Cloud Computing del Master Profesional en Ingeniería Informática de la ETSIIT - UGR.
+# Charge Your Travel
+Autor: :octocat: @DomingoLopez
+Estado actual: :construction: En construcción.
+
+## Descripción del problema
+
+
