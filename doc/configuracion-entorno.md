@@ -15,9 +15,9 @@ ssh-keygen -t ed25519 -C "domin68914@gmail.com"
 
 donde -t indica la firma, en este caso [ed25519](https://ed25519.cr.yp.to/index.html) y -C para añadir un comentario con nuestro correo.
 
-![Generando par público - privado](./configuracion-entorno-img/generar-ssh-pair.png)
+![Generando par público - privado](./img/configuracion-entorno-img/generar-ssh-pair.png)
 
-Esto genera un par de clave público - privada en ~/.ssh/
+Esto genera un par de claves público - privada en ~/.ssh/
 
 A continuación las añadimos al agente ssh. En primer lugar comprobamos que el agente está corriendo con:
 
@@ -25,7 +25,7 @@ A continuación las añadimos al agente ssh. En primer lugar comprobamos que el 
 eval "$(ssh-agent -s)"
 ```
 
-![Comprobar que el agente está running](./configuracion-entorno-img/ssh-agent.png)
+![Comprobar que el agente está running](./img/configuracion-entorno-img/ssh-agent.png)
 
 y posteriormente añadimos la clave privada al agente con 
 
@@ -33,7 +33,7 @@ y posteriormente añadimos la clave privada al agente con
 ssh-add ~/.ssh/id_ed25519
 ```
 
-![Añadir clave al agente](./configuracion-entorno-img/ssh-agent-add.png)
+![Añadir clave al agente](./img/configuracion-entorno-img/ssh-agent-add.png)
 
 
 ### Subida de clave pública a github :key:
@@ -45,7 +45,7 @@ gh auth login
 ```
 Al hacerlo y siguiendo los pasos que nos indica nos dará la opción de subir una clave pública ssh (autodetectada por el cli), con lo que ya habríamos subido la clave. 
 
-![gh auth](./configuracion-entorno-img/gh-auth.png)
+![gh auth](./img/configuracion-entorno-img/gh-auth.png)
 
 También podríamos subirla de manera manual, ejecutanto:
 
@@ -55,7 +55,7 @@ gh ssh-key add ~/.ssh/id_ed25519.pub --title "Linux Mint MSI"
 
 Como vemos, hemos subido nuestra clave pública al almacén de claves de github:
 
-![Utilizando gh para subir clave ssh](./configuracion-entorno-img/gh-add-key-github.png)
+![Utilizando gh para subir clave ssh](./img/configuracion-entorno-img/gh-add-key-github.png)
 
 ## Configuración del nombre y correo electrónico en git
 
@@ -72,7 +72,7 @@ Podemos comprobar la configuración de git utilizando:
 ```
 git config --list 
 ```
-![git config](./configuracion-entorno-img/git-config.png)
+![git config](./img/configuracion-entorno-img/git-config.png)
 
 ## Configuración para hacer --rebase en cada pull
 
@@ -82,5 +82,14 @@ Siempre que hagamos un push debemos hacer antes un *pull* con *--rebase* para ev
 git config pull.rebase true
 ```
 
-Se podría utilizar la opción *--global* para que afectara a todo el entorno de git, pero de momento lo haremos en el directorio de trabajo del proyecto para que solamente afecte a este.
+Esto es de especial interés cuando se realizan cambios sobre un *fork*. Adicionalemnte se podría utilizar la opción *--global* para que afectara a todo el entorno de git, pero de momento lo haremos en el directorio de trabajo del proyecto para que solamente afecte a este.
 
+## Configuración de avatar y perfil en Github 
+
+![Perfil github](./img/configuracion-entorno-img/perfil-github.png)
+
+## Configuración de doble factor de autenticación en github
+
+Simplemente elegimos el tipo de doble factor de autenticación a utilizar en el apartado *Account Security* de nuestro perfil de github. En este caso se ha elegido doble factor de autenticación via sms.
+
+![Doble factor auth](./img/configuracion-entorno-img/2-factor.png)
