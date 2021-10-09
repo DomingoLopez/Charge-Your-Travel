@@ -17,7 +17,7 @@ Este sistema permitiría a las estaciones de servicio anunciarse y exponer sus p
 
 ## Documentación Adicional
 
-* [Configuración del entorno: Git y Github.](doc/doc_additional/configuracion-entorno.md)
+* [Configuración del entorno: Git y Github.](doc/additional_doc/configuracion-entorno.md)
 
     > Configuración de par de claves pública y privada para conexión ssh a github. Configuración de cuenta de github.
 
