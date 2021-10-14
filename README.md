@@ -12,7 +12,12 @@ Los particulares dispondrían de un sistema en el que comparar distintas estacio
 
 Este sistema permitiría a las estaciones de servicio anunciarse y exponer sus precios de recarga, así como ofertar servicios al usuario particular del vehículo como sistema de puntos y descuentos. Además, podrán comprobar los usuarios que utilizan el sistema y que acaban repostando en sus estaciones. La recarga eléctrica del vehículo implica estar un cierto tiempo en la estación de servicio, que puede derivar en ventas colaterales de otros servicios físicos que ofrezca la estación de servicio.
 
-## Documentación
+## Planificación 
+
+Se propone la siguiente planificación para el desarrollo del proyecto, en la que se han identificado las [historias de usuario](doc/user-stories.md) y los [PMV](doc/pmv.md), así como los *roles* de los distintos usuarios del sistema y [las entidades y objetos de valor](doc/entities-objects.md) que forman parte de las historias de usuario. 
+
+Dado que la finalidad es la de obtener un producto viable y de calidad que haya superado distintos tests, así como su posterior despliegue en la nube, se han identificado los PMV que he considerado más relevantes y con más cantidad de lógica de negocio, quedando la planificación tal que así:
+
 
 
 ## Documentación Adicional
@@ -20,6 +25,10 @@ Este sistema permitiría a las estaciones de servicio anunciarse y exponer sus p
 * [Configuración del entorno: Git y Github.](doc/additional_doc/configuracion-entorno.md)
 
     > Configuración de par de claves pública y privada para conexión ssh a github. Configuración de cuenta de github.
+
+* [Creación de *milestones* e *issues* de las HU utilizando gh.](doc/additional_doc/creacion-milestones-issues.md)
+
+    > Creación y enlace de los milestones con las issues de las HU a través del CLI de github (gh).
 
 ## Licencia
 
