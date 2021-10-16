@@ -26,13 +26,24 @@ EstacionServicio:
 - TipoConector []: array de conectores disponibles en la estación de servicio.
 - FiltroPrecio: Filtro actual (descuento) a aplicar en el precio de la recarga eléctrica de vehículos.
 
+
+
+El enumerado **TipoConector** podría considerarse como un **objeto de valor** ya que no es un objeto que podamos identificar inequívocamente por un identificador único y persistente en el tiempo. Simplemente aporta valor sobre el tipo de conector del que dispone el vehículo eléctrico.
+
+La clase **FiltroPrecio** y la clase **Ruta** podría considerarse **agregados**, ya que están asociados a objetos del dominio del problema, en este caso la entidad *EstacionServicio* y también a UsuarioParticular, sin los cuales no tendrían sentido en el dominio:
+
+FiltroPrecio
+- precio_base_kwh: precio del Kw/h en la estación del servicio.
+- base_discount_percent: descuento base a aplicar por la estación de servicio en cada recarga.
+- inc_discount_percent: incremento del descuento por cada recarga acumulativa.
+- max_discount_percent: descuento máximo a aplicar por recargas acumulativas.
+- activated: booleano que indica si se debe aplicar el filtro de precio o no.
+- fecha_ini: fecha de inicio de la aplicación del descuento.
+- fecha_fin: fecha fin de la aplicación del descuento.
+
 Ruta:
 - distancia_total: distancia a recorrer durante la ruta para llegar al destino.
 - lat_ini: latitud del punto origen.
 - lon_ini: longitud del punto origen.
 - lat_fin: latitud del punto destino.
 - lon_fin: longitud del punto destino.
-
-El enumerado **TipoConector** podría considerarse como un **objeto de valor** ya que no es un objeto que podamos identificar inequívocamente por un identificador único y persistente en el tiempo. Simplemente aporta valor sobre el tipo de conector del que dispone el vehículo eléctrico.
-
-La clase **FiltroPrecio** podría considerarse como un **agregado**, ya que está asociado a un objeto del dominio del problema, en este caso la entidad *EstacionServicio*, y sin la cual no tendría sentido en el dominio.
