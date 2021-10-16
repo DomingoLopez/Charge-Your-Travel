@@ -14,10 +14,19 @@ Este sistema permitiría a las estaciones de servicio anunciarse y exponer sus p
 
 ## Planificación 
 
-Se propone la siguiente planificación para el desarrollo del proyecto, en la que se han identificado las [historias de usuario](doc/user-stories.md) y los [PMV](doc/pmv.md), así como los *roles* de los distintos usuarios del sistema y [las entidades y objetos de valor](doc/entities-objects.md) que forman parte de las historias de usuario. 
+Se propone la siguiente planificación para el desarrollo del proyecto, en la que se han identificado las [historias de usuario](doc/user-stories.md) y los [PMV](doc/pmv.md), así como los *roles* de los distintos usuarios del sistema.
 
-Dado que la finalidad es la de obtener un producto viable y de calidad que haya superado distintos tests, así como su posterior despliegue en la nube, se han identificado los PMV que he considerado más relevantes y con más cantidad de lógica de negocio, quedando la planificación tal que así:
+Dado que la finalidad es la de obtener un producto viable y de calidad que haya superado distintos tests así como su posterior despliegue en la nube, se han identificado los PMV que he considerado más relevantes y con más cantidad de lógica de negocio, quedando la planificación tal que así:
 
+|              |    PMV 1   |    PMV 2   |    PMV 3   |    PMV 4   |
+|--------------|:----------:|:----------:|:----------:|:----------:|
+| Fecha Inicio | 11/10/2021 | 19/10/2021 | 01/11/2021 | 15/11/2021 |
+| Fecha Fin    | 18/10/2021 | 31/10/2021 | 14/11/2021 | 28/11/2021 |
+
+
+## Diseño
+
+A raíz de las HU se propone la primera versión del [Diagrama de clases del sistema](doc/class-diagram.md), el cual podrá evolucionar en función de nuevos requerimientos o ajustes en la funcionalidad, siempre con el objetivo de disponer de un diseño sólido en todas las etapas del proyecto. Además, se identifican las **entidades**, **objetos de valor** y **agregados** siguiendo a muy grandes rasgos el enfoque [DDD](https://medium.com/@jonathanloscalzo/domain-driven-design-principios-beneficios-y-elementos-segunda-parte-337d77dc8566).
 
 
 ## Documentación Adicional
@@ -26,9 +35,6 @@ Dado que la finalidad es la de obtener un producto viable y de calidad que haya 
 
     > Configuración de par de claves pública y privada para conexión ssh a github. Configuración de cuenta de github.
 
-* [Creación de *milestones* e *issues* de las HU utilizando gh.](doc/additional_doc/creacion-milestones-issues.md)
-
-    > Creación y enlace de los milestones con las issues de las HU a través del CLI de github (gh).
 
 ## Licencia
 
