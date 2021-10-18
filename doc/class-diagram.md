@@ -8,7 +8,6 @@ Podemos distinguir las siguientes entidades siguiendo a grandes rasgos el [enfoq
 
 UsuarioParticular:
 - _id : identificador único del usuario
-- vh_en_uso: identificador del vehículo en uso de los disponibles por el usuario
 - Vehiculo []: array de vehículos del usuario
 
 Vehículo:
@@ -49,3 +48,5 @@ Ruta:
 - lon_ini: longitud del punto origen.
 - lat_fin: latitud del punto destino.
 - lon_fin: longitud del punto destino.
+- UsuarioParticular: usuario que inicia la ruta.
+- EstacionServicio []: estaciones de servicio posibles para la ruta.
