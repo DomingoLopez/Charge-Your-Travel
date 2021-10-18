@@ -29,7 +29,7 @@ EstacionServicio:
 
 El enumerado **TipoConector** podría considerarse como un **objeto de valor** ya que no es un objeto que podamos identificar inequívocamente por un identificador único y persistente en el tiempo. Simplemente aporta valor sobre el tipo de conector del que dispone el vehículo eléctrico.
 
-La clase **FiltroPrecio** también es un objeto de valor que no tiene identidad propia y no tendría sentido sin la clase *EstacionServicio*.
+La clase **FiltroPrecio** también es un objeto de valor que no tiene identidad propia y no tendría sentido sin la clase *EstacionServicio*. En conjunto, las clases EstacionServicio y FiltroPrecio podrían considerarse como un **agregado**.
 
 FiltroPrecio:
 - precio_base_kwh: precio del Kw/h en la estación del servicio.
