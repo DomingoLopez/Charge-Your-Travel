@@ -30,9 +30,9 @@ EstacionServicio:
 
 El enumerado **TipoConector** podría considerarse como un **objeto de valor** ya que no es un objeto que podamos identificar inequívocamente por un identificador único y persistente en el tiempo. Simplemente aporta valor sobre el tipo de conector del que dispone el vehículo eléctrico.
 
-La clase **FiltroPrecio** y la clase **Ruta** podría considerarse **agregados**, ya que están asociados a objetos del dominio del problema, en este caso la entidad *EstacionServicio* y también a UsuarioParticular, sin los cuales no tendrían sentido en el dominio:
+La clase **FiltroPrecio** también es un objeto de valor que no tiene identidad propia y no tendría sentido sin la clase *EstacionServicio*.
 
-FiltroPrecio
+FiltroPrecio:
 - precio_base_kwh: precio del Kw/h en la estación del servicio.
 - base_discount_percent: descuento base a aplicar por la estación de servicio en cada recarga.
 - inc_discount_percent: incremento del descuento por cada recarga acumulativa.
@@ -40,6 +40,8 @@ FiltroPrecio
 - activated: booleano que indica si se debe aplicar el filtro de precio o no.
 - fecha_ini: fecha de inicio de la aplicación del descuento.
 - fecha_fin: fecha fin de la aplicación del descuento.
+
+La clase **Ruta** podría considerarse también un objeto de valor, ya que están asociados a objetos del dominio del problema sin tener una identidad propia. Aportará la ruta óptima (tras la ejecución de un algoritmo de optimización) al usuario, siendo el grueso de la lógica de negocio del sistema.
 
 Ruta:
 - distancia_total: distancia a recorrer durante la ruta para llegar al destino.
