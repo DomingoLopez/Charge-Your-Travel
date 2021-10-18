@@ -1,4 +1,4 @@
-import { TipoConector } from "./tipo-conector";
+import { TipoConector } from "./enum/tipo-conector";
 
 
 export class Vehiculo {
