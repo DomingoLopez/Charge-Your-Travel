@@ -6,7 +6,9 @@ export class UsuarioParticular{
 
     constructor(
         private _id: string,
-        private vehiculos: Vehiculo[]) {
+        private lat_ini: number,
+        private lat_fin: number,
+        private vehiculo: Vehiculo) {
     }
 
 
@@ -20,12 +22,14 @@ export class UsuarioParticular{
     }
 
 
-    public vehiculoEnUso(id: string) : Vehiculo {
-        //return this.vehiculos.filter(item => item.id === id)[0];
-        throw new Error("not Implemented")
+    public getVehiculo() : Vehiculo {
+        return this.vehiculo;
     }
 
 
+    public getEstacionesCercanas(){
+        throw new Error("not Implemented")
+    }
     
   
     
