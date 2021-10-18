@@ -26,7 +26,7 @@ EstacionServicio:
 - filtro_precio: Filtro actual (descuento) a aplicar en el precio de la recarga eléctrica de vehículos.
 
 
-LogImpresiones:
+Impresion:
 - _id: identificador único de la impresión
 - _id_usuario: identificador del usuario al que se le ha recomendado esa estación en la ruta.
 - _id_estación: identificador de la estación mostrada en la impresión.
@@ -56,4 +56,4 @@ Ruta:
 - coord_destino: coordenadas del destino
 - usuario_particular: usuario que inicia la ruta.
 - estaciones_servicio: estaciones de servicio posibles para la ruta.
-- log_impresiones: Log de *impresiones* de estaciones de servicio que se proveen al usuario.
+- impresiones: *Impresiones* de estaciones de servicio que se proveen al usuario.
