@@ -49,7 +49,7 @@ FiltroPrecio:
 - fecha_ini: fecha de inicio de la aplicación del descuento.
 - fecha_fin: fecha fin de la aplicación del descuento.
 
-La clase **Ruta** podría considerarse también un objeto de valor, ya que está asociada a objetos del dominio del problema sin tener una identidad propia. Aportará la ruta óptima (tras la ejecución de un algoritmo de optimización) al usuario, siendo el grueso de la lógica de negocio del sistema.
+La clase **Ruta** podría considerarse también un **agregado** junto con la entidad *Impresion*.
 
 Ruta:
 - distancia_total: distancia a recorrer durante la ruta para llegar al destino.
