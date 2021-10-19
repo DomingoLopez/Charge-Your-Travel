@@ -1,0 +1,4 @@
+EstacionServicio: src/classes/estacion-servicio.ts
+Impresion: src/classes/impresion.ts
+UsuarioParticular: src/classes/usuario-particular.ts
+Vehiculo: src/classes/vehiculo.ts
