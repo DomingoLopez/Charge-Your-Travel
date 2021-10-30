@@ -3,16 +3,31 @@ import { TipoConector } from './enum/tipo-conector';
 
 export class Impresion{
 
+    _id: string;
+    _id_usuario: string;
+    tipo_conector: TipoConector;
+    _id_estacion: string;
+    timestamp: string;
+    dist_ecu_estacion: number;
+    tipo_impresion: TipoImpresion;
 
     constructor(
-        private _id: string,
-        private _id_usuario: string,
-        private tipo_conector: TipoConector,
-        private _id_estacion: string,
-        private timestamp: string,
-        private dist_ecu_estacion: number,
-        private tipo_impresion: TipoImpresion
-        ) {
+        _id: string,
+        _id_usuario: string,
+        tipo_conector: TipoConector,
+        _id_estacion: string,
+        timestamp: string,
+        dist_ecu_estacion: number,
+        tipo_impresion: TipoImpresion
+    ) 
+    {
+        this._id = _id;
+        this._id_usuario = _id_usuario;
+        this.tipo_conector = tipo_conector;
+        this._id_estacion = _id_estacion;
+        this.timestamp = timestamp;
+        this.dist_ecu_estacion = dist_ecu_estacion;
+        this.tipo_impresion = tipo_impresion;
     }
 
 
@@ -22,10 +37,7 @@ export class Impresion{
      * Getters
      */
 
-    public get id() : string {
-        return this._id;
-    }
-
+   
     public addImpresion(): void{
         throw new Error("not Implemented")
     }
