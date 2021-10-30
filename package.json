@@ -1,0 +1,35 @@
+{
+  "name": "Charge-Your-Travel",
+  "version": "1.0.0",
+  "description": "Sistema de recomendación y rutas óptimas de viaje en vehículo elétrico a través de estaciones de servicio que permitan este tipo de recarga.",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DomingoLopez/Charge-Your-Travel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DomingoLopez/Charge-Your-Travel/issues"
+  },
+  "homepage": "https://github.com/DomingoLopez/Charge-Your-Travel#readme",
+  "devDependencies": {
+    "docco": "^0.8.1",
+    "grunt": "^1.4.1",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-docco": "^0.5.0",
+    "grunt-ts": "^6.0.0-beta.22",
+    "jest": "^27.3.1",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "tsc": "^2.0.3"
+  }
+}
