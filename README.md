@@ -31,17 +31,11 @@ A raíz de las HU se propone la primera versión del [Diagrama de clases del sis
 
 ## Implementación
 
-### Desarrollo basado en pruebas
-
-Para la implementación de los distintos componentes del sistema utilizaremos en enfoque [TDD](https://es.wikipedia.org/wiki/Desarrollo_guiado_por_pruebas) (Test Driven Development), en el que escribiremos las pruebas de cada uno de los componentes del sistema de forma aislada y posteriormente escribiremos el código de dichos componentes para verificar si pasamos los tests. 
-
-En general, la metodología TDD implica pasar por los siguientes estados en el marco de pruebas:
-1. Escribir los tests
-2. Verificar que los tests fallan
-3. Escribir el código necesario para que se pasen los tests
-4. Verificar que los tests pasan 
-5. Refactorizar el código escrito
-
+Para la implementación de los distintos componentes del sistema se utilizará un enfoque [TDD](https://es.wikipedia.org/wiki/Desarrollo_guiado_por_pruebas), así como distintas herramientas para construir, automatizar y testear las distintas implementaciones que se llevarán a cabo. Puede verse una descripción completa de las herramientas utilizadas en el proyecto en la [descripción de la Implementación](doc/implementation.md). Para resumir, utilizaremos:
+- [Grunt](https://gruntjs.com/) como *Task runner*
+- [Jest](https://jestjs.io/es-ES/) como *Framework de test*
+- [npm](https://www.npmjs.com/) como *Gestor de dependencias*
+- [NodeJs](https://nodejs.org/es/) como *Entorno de ejecución JS*
 
 ## Documentación Adicional
 
