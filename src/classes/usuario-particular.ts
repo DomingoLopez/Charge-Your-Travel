@@ -4,27 +4,23 @@ import { Vehiculo } from "./vehiculo";
 export class UsuarioParticular{
 
 
+    _id: string;
+    lat_ini: number;
+    lat_fin: number;
+    vehiculo: Vehiculo;
+
     constructor(
-        private _id: string,
-        private lat_ini: number,
-        private lat_fin: number,
-        private vehiculo: Vehiculo) {
+        _id: string,
+        lat_ini: number,
+        lat_fin: number,
+        vehiculo: Vehiculo) 
+    {
+        this._id = _id;
+        this.lat_ini = lat_ini;
+        this.lat_fin = lat_fin;
+        this.vehiculo = vehiculo;
     }
 
-
-
-    /**
-     * Getters
-     */
-
-    public get id() : string {
-        return this._id;
-    }
-
-
-    public getVehiculo() : Vehiculo {
-        return this.vehiculo;
-    }
 
 
     public getEstacionesCercanas(){

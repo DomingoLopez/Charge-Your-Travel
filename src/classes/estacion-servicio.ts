@@ -5,36 +5,24 @@ import { TipoConector } from './enum/tipo-conector';
 
 export class EstacionServicio{
 
+    _id: string;
+    coord: Coordenadas;
+    filtro_precio: FiltroPrecio;
+    tipo_conector: TipoConector[];
 
     constructor(
-        private _id: string,
-        private coord: Coordenadas,
-        private filtro_precio: FiltroPrecio,
-        private tipo_conector: TipoConector[]) {
+        _id: string,
+        coord: Coordenadas,
+        filtro_precio: FiltroPrecio,
+        tipo_conector: TipoConector[]) 
+    {
+        this._id = _id;
+        this.coord = coord;
+        this.filtro_precio = filtro_precio;
+        this.tipo_conector = tipo_conector;
     }
 
 
-
-    /**
-     * Getters
-     */
-
-    public get id() : string {
-        return this._id;
-    }
-
-
-    public getFiltroPrecio() : FiltroPrecio {
-        return this.filtro_precio;
-    }
-
-    public getCoords(): Coordenadas{
-        return this.coord;
-    }
-
-    public getConectores(): TipoConector[]{
-        return this.tipo_conector;
-    }
 
     public hasConnector(tipoConector: TipoConector): boolean{
         throw new Error("not Implemented")
