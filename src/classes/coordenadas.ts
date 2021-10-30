@@ -2,8 +2,14 @@
 
 export class Coordenadas {
 
+    lat: number;
+    lon: number;
+
     constructor(lat: number,
-                lon: number) {
+                lon: number) 
+    {
+        this.lat = lat;
+        this.lon = lon;
     }
 
 

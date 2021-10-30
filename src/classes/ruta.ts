@@ -7,14 +7,25 @@ import { Impresion } from './impresion';
 export class Ruta{
 
 
-    constructor(
-        private distancia_total: number,
-        private usuario_particular: UsuarioParticular,
-        private coord_destino: Coordenadas,
-        private estaciones_servicio: EstacionServicio[],
-        private impresiones?: Impresion[]) {
-    }
+    distancia_total: number;
+    usuario_particular: UsuarioParticular;
+    coord_destino: Coordenadas;
+    estaciones_servicio: EstacionServicio[];
+    impresiones?: Impresion[];
 
+    constructor(
+        distancia_total: number,
+        usuario_particular: UsuarioParticular,
+        coord_destino: Coordenadas,
+        estaciones_servicio: EstacionServicio[],
+        impresiones?: Impresion[]) 
+    {
+        this.distancia_total = distancia_total;
+        this.usuario_particular = usuario_particular;
+        this.coord_destino = coord_destino;
+        this.estaciones_servicio = estaciones_servicio;
+        this.impresiones = impresiones;
+    }
 
 
     public calculaRutaOptima(){
