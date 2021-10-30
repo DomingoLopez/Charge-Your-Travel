@@ -31,7 +31,16 @@ A raíz de las HU se propone la primera versión del [Diagrama de clases del sis
 
 ## Implementación
 
+### Desarrollo basado en pruebas
 
+Para la implementación de los distintos componentes del sistema utilizaremos en enfoque [TDD](https://es.wikipedia.org/wiki/Desarrollo_guiado_por_pruebas) (Test Driven Development), en el que escribiremos las pruebas de cada uno de los componentes del sistema de forma aislada y posteriormente escribiremos el código de dichos componentes para verificar si pasamos los tests. 
+
+En general, la metodología TDD implica pasar por los siguientes estados en el marco de pruebas:
+1. Escribir los tests
+2. Verificar que los tests fallan
+3. Escribir el código necesario para que se pasen los tests
+4. Verificar que los tests pasan 
+5. Refactorizar el código escrito
 
 
 ## Documentación Adicional
