@@ -34,11 +34,11 @@ export class FiltroPrecio{
     /**
      * Obtiene el precio final del kwh de la estación en función de 
      * las veces que haya recargado un usuario y el tipo de conector.
-     * Si el conector es carga rápida se incremente el precio final un 21%
+     * Si el conector es carga rápida se incrementa el precio final un 21%
      * @param tipo_conector: tipo de conector que necesita el usuario para recargar
      * @param _id_estacion: identificador de la estación de servicio
      * @param _id_usuario: identificador del usuario
-     * @returns precio_final: -1 si no está activo el filtro, precio_final si está activo
+     * @returns precio_final: -1 si no está activo el filtro o fuera de rango de fechas, precio_final si está activo
      */
     public applyFilters(tipo_conector: TipoConector, _id_estacion: string, _id_usuario:string): number{
         
