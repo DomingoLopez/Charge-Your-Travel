@@ -1,3 +1,4 @@
+import { TipoConector } from './enum/tipo-conector';
 
 
 export class FiltroPrecio{
@@ -29,15 +30,32 @@ export class FiltroPrecio{
         this.fecha_fin = fecha_fin;
     }
 
+    
     /**
-     * Logic Methods
+     * Obtiene el precio final del kwh de la estación en función de 
+     * las veces que haya recargado un usuario y el tipo de conector
+     * @param tipo_conector: tipo de conector que necesita el usuario para recargar
+     * @param _id_estacion: identificador de la estación de servicio
+     * @param _id_usuario: identificador del usuario
+     * @returns precio_final: -1 si no está activo el filtro, precio_final si está activo
      */
-
-    public applyFilters(totalPrice: number, userID: string): number{
+    public applyFilters(tipo_conector: TipoConector, _id_estacion: string, _id_usuario:string): number{
         throw new Error("not Implemented")
     }
 
-  
+
+
+
+    /**
+     * Obtiene el número de veces que el usuario ha repostado en
+     * la estación de servicio en las fechas del filtro de precio
+     * @param _id_estacion: identificador de la estación de servicio
+     * @param _id_usuario: identificador del usuario
+     * @returns numero_veces: -1 si no está activo el filtro, n si está activo
+     */
+    public getUserRechargeTimes(_id_estacion: string, _id_usuario: string): number{
+        throw new Error("not Implemented")
+    }
 
 
 
