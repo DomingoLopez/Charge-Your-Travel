@@ -23,11 +23,36 @@ export class EstacionServicio{
     }
 
 
-
+    /**
+     * Método para saber si se dispone de ese tipo de conector en la estación 
+     * de servicio.
+     * @param tipoConector: tipo de conector a consultar
+     * @returns true si se dispone de ese conector, false en caso contrario
+     */
     public hasConnector(tipoConector: TipoConector): boolean{
         throw new Error("not Implemented")
     }
+
+    /**
+     * Obtiene el precio final del kwh de la estación en función de 
+     * las veces que haya recargado un usuario y el tipo de conector.
+     * @param tipo_conector: tipo de conector que necesita el usuario para recargar
+     * @param _id_estacion: identificador de la estación de servicio
+     * @param _id_usuario: identificador del usuario
+     * @returns precio_final: -1 si no está activo el filtro o fuera de rango de fechas, precio_final si está activo
+     */
+    public getPriceFilteredByUser(tipo_conector: TipoConector,_id_usuario: string, _id_estacion: string): number {
+        throw new Error("not Implemented")
+    }
   
+    /**
+     * Obtiene distancia a la estación
+     * @param coordenadas_origen: coordenadas
+     * @returns distancia a la estación
+     */
+    public getDistanceToStation(coordenadas_origen:  Coordenadas): number{
+        throw new Error("not Implemented")
+    }
 
     
 
