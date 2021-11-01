@@ -37,6 +37,9 @@ module.exports = function(grunt){
             },
             test:{
                 exec: 'npm test'
+            },
+            install:{
+                exec: 'npm install'
             }
         }
 

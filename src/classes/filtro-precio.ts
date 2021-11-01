@@ -47,14 +47,16 @@ export class FiltroPrecio{
             fecha_consulta >= new Date(this.fecha_ini) && 
             fecha_consulta <= new Date(this.fecha_fin) ){
 
-            //TODO: Implementar consulta al model FiltroPrecio cuando se implemente la base de datos
+            //TODO: Implementar consulta al FiltroPrecioService cuando se implemente la base de datos
             //total_recargas = FiltroPrecioService.getNumRecargas(_id_estacion,_id_usuario, fecha_ini,fecha_fin)
             let mock_total_recargas: number = 2;
             let descuento_aplicable = this.base_discount_percent + (mock_total_recargas*this.inc_discount_percent);
             let total_discount = descuento_aplicable > this.max_discount_percent ? this.max_discount_percent : descuento_aplicable;
             
             //Si el conector es carga rápida el precio se incrementa un 21%
-            return tipo_conector === TipoConector.CARGA_RAPIDA ? (this.precio_base_kwh - (this.precio_base_kwh*total_discount))*1.21 : (this.precio_base_kwh - (this.precio_base_kwh*total_discount));
+            return tipo_conector === TipoConector.CARGA_RAPIDA ? 
+                    (this.precio_base_kwh - (this.precio_base_kwh*total_discount))*1.21 : 
+                    (this.precio_base_kwh - (this.precio_base_kwh*total_discount));
 
         }else{
             return -1;
