@@ -37,12 +37,35 @@ Para la implementación de los distintos componentes del sistema se utilizará u
 - [npm](https://www.npmjs.com/) como *Gestor de dependencias*
 - [NodeJs](https://nodejs.org/es/) como *Entorno de ejecución JS*
 
+En este [enlace](doc/additional_doc/tdd.md) puede verse la forma de seguir la metodología TDD con capturas de pantalla, aplicando tests con **Jest** a una clase particular descrita en la lógica de negocio del proyecto. 
+
+El gestor de tareas escogido (**Grunt**) nos permite registrar una serie de tareas que pueden ser ejecutadas de manera muy sencilla y ayudarán a gestionar archivos, limpiar el proyecto, trasnpilar o generar documentación:
+
+Instalar dependencias del proyecto
+> grunt run:install
+
+Transpilar de Typescript a Js
+> grunt ts:build
+
+Limpiar archivos transpilados
+> grunt clean
+
+Ejecutar los tests
+> grunt run:test
+
+Generar documentación
+    > grunt docco
+
+
 ## Documentación Adicional
 
 * [Configuración del entorno: Git y Github.](doc/additional_doc/configuracion-entorno.md)
 
     > Configuración de par de claves pública y privada para conexión ssh a github. Configuración de cuenta de github.
 
+* [Proceso TDD](doc/additional_doc/tdd.md)
+
+    > Capturas de pantalla de test fallando, desarrollo del código y tests en verde (Red - Code - Green).
 
 ## Licencia
 

@@ -13,7 +13,8 @@ En general, la metodología TDD implica pasar por los siguientes estados en el m
 4. Verificar que los tests pasan 
 5. Refactorizar el código escrito
 
-Como framework de tests se utilizará *[Jest](https://jestjs.io/es-ES/)*, que dispone de un enfoque [BDD](https://es.wikipedia.org/wiki/Desarrollo_guiado_por_comportamiento) (Behaviour Driven Development) a la hora de implementar los tests.
+Como framework de tests se utilizará *[Jest](https://jestjs.io/es-ES/)*, que dispone de un enfoque [BDD](https://es.wikipedia.org/wiki/Desarrollo_guiado_por_comportamiento) (Behaviour Driven Development) a la hora de implementar los tests. La elección de Jest se basa en la gran comunidad de la que dispone así como de su documentación, siendo uno de los frameworks de tests más utilizados hoy día. Además, Jest incorpora su propia librería de **aserciones**.
+
 
 ## Gestores de tareas
 
@@ -21,7 +22,7 @@ Tanto para construir, limpiar y pasar los tests del proyecto se utilizará un ge
 
 Existen distintos gestores de tareas, como Make, GruntJs, GulpJs, etc. En este caso se ha escogido *[Grunt](https://gruntjs.com/)* dado que está pensado para escribir sus archivos de configuración y lanzamiento de órdenes en Javascript o Typescript, por lo que la curva de aprendizje del Task Runner será menor dado que ya utilizamos Typescript como lenguage principal del proyecto. 
 
-Además, Grunt es más antiguo que otros task runners similares como Gulp (aunque no tanto como Make) por lo que existe una comunidad más amplia que lo utiliza y será más sencillo encontrar soluciones a posibles problemas que podamos encontrar en su configuración y uso. 
+Además, Grunt es más antiguo que otros task runners similares como Gulp (aunque no tanto como Make) por lo que existe una comunidad más amplia que lo utiliza y será más sencillo encontrar soluciones a posibles problemas que podamos encontrar en su configuración y uso. Además, el ecosistema de Grunt permite **incorporar multitud de plugins** que nos facilitarán la vida, como *[grunt-contrib-clean](https://www.npmjs.com/package/grunt-contrib-clean)* o *[grunt-run](https://www.npmjs.com/package/grunt-run)*.
 
 Para proyectos más grandes sería una buena elección utilizar Make o incluso Gulp, dado que este último es más rápido que Grunt, **algo sumamente importante a la hora de pasar tests y tareas automatizadas** : [Gulp lleva a cabo los procesos en la memoria principal](https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/gulp-vs-grunt-que-diferencia-a-estos-task-runners/). 
 
