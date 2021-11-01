@@ -30,6 +30,9 @@ module.exports = function(grunt){
         clean: {
             build: ['build'],
             release: ['dist/']
+        },
+        test: {
+            run: "jest"
         }
 
         });
