@@ -28,9 +28,9 @@ describe('FiltroPrecio tests', () => {
 
         params = {
             precio_base_kwh: 0.14, 
-            base_discount_percent: 5,
-            inc_discount_percent: 3,
-            max_discount_percent: 20,
+            base_discount_percent: 0.05,
+            inc_discount_percent: 0.03,
+            max_discount_percent: 0.2,
             activated: true,
             fecha_ini: fecha_inicio.toISOString(),
             fecha_fin:fecha_final.toISOString()
@@ -51,6 +51,7 @@ describe('FiltroPrecio tests', () => {
 
         filtro_precio.fecha_ini = params.fecha_ini;
         filtro_precio.fecha_fin = params.fecha_fin;
+        tipo_conector = TipoConector.CHADEMO;
         filtro_precio.activated = true;
 
     });
@@ -67,32 +68,7 @@ describe('FiltroPrecio tests', () => {
         expect(filtro_precio.fecha_fin).toBe(params.fecha_fin);
     });
 
-    //getUserRechargeTimes
-
-
-    test("getUserRechargeTimes devuelve -1 si la fecha actual no está entre fecha_ini y fecha_fin", ()=>{
-
-        let fecha_fuera_de_rango: Date = new Date(filtro_precio.fecha_ini); 
-        fecha_fuera_de_rango.setDate(fecha_fuera_de_rango.getDate() + 1);
-        //fecha_fin = fecha_ini +1;
-        filtro_precio.fecha_fin = fecha_fuera_de_rango.toISOString();
-        expect(filtro_precio.getUserRechargeTimes("usuario_test_id","estacion_test_id")).toBe(-1);
-
-    });
-
-    test("getUserRechargeTimes devuelve -1 si el filtro no está activo", ()=>{
-
-        filtro_precio.activated = false;
-        expect(filtro_precio.getUserRechargeTimes("usuario_test_id","estacion_test_id")).toBe(-1);
-
-    });
-
-    test("getUserRechargeTimes devuelve número de recargas si la fecha actual está entre fecha_ini y fecha_fin y el filtro está activo", ()=>{
-
-        expect(filtro_precio.getUserRechargeTimes("usuario_test_id","estacion_test_id")).toBeGreaterThanOrEqual(0);
-
-    });
-
+    
     //applyFilters
 
     test("applyFilters devuelve -1 si la fecha actual no está entre fecha_ini y fecha_fin", ()=>{
@@ -112,9 +88,17 @@ describe('FiltroPrecio tests', () => {
 
     });
 
-    test("applyFilters devuelve precio del kwh si la fecha actual está en rango de las fechas del filtro y este está activado", ()=>{
+    test("applyFilters devuelve precio del kwh descontado si la fecha actual está en rango de las fechas del filtro y este está activado", ()=>{
 
         expect(filtro_precio.applyFilters(tipo_conector,"usuario_test_id","estacion_test_id")).toBeGreaterThanOrEqual(0);
+
+    });
+
+    test("applyFilters devuelve precio del kwh descontado y con un 21% de cargo si el conetor es de tipo CARGA_RAPIDA", ()=>{
+
+        let total_discount = filtro_precio.applyFilters(tipo_conector,"usuario_test_id","estacion_test_id");
+        tipo_conector = TipoConector.CARGA_RAPIDA;
+        expect(filtro_precio.applyFilters(tipo_conector,"usuario_test_id","estacion_test_id")).toBe(total_discount*1.21);
 
     });
 
