@@ -31,8 +31,13 @@ module.exports = function(grunt){
             build: ['build'],
             release: ['dist/']
         },
-        test: {
-            run: "jest"
+        run:{
+            options:{
+
+            },
+            test:{
+                exec: 'npm test'
+            }
         }
 
         });
@@ -46,6 +51,8 @@ module.exports = function(grunt){
         grunt.loadNpmTasks("grunt-ts");
         // Cargamos plugin de limpieza para limpiar directorios
         grunt.loadNpmTasks('grunt-contrib-clean');
+        // Cargamos plugin para ejecutar comandos de shell
+        grunt.loadNpmTasks('grunt-run');
       
 
 
