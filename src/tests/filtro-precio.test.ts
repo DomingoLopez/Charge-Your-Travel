@@ -71,20 +71,20 @@ describe('FiltroPrecio tests', () => {
     
     //applyFilters
 
-    test("applyFilters devuelve -1 si la fecha actual no está entre fecha_ini y fecha_fin", ()=>{
+    test("applyFilters devuelve el precio base si la fecha actual no está entre fecha_ini y fecha_fin", ()=>{
 
         let fecha_fuera_de_rango: Date = new Date(filtro_precio.fecha_ini); 
         fecha_fuera_de_rango.setDate(fecha_fuera_de_rango.getDate() + 1);
         //fecha_fin = fecha_ini +1;
         filtro_precio.fecha_fin = fecha_fuera_de_rango.toISOString();
-        expect(filtro_precio.applyFilters(tipo_conector,"usuario_test_id","estacion_test_id")).toBe(-1);
+        expect(filtro_precio.applyFilters(tipo_conector,"usuario_test_id","estacion_test_id")).toBe(filtro_precio.precio_base_kwh);
 
     });
 
-    test("applyFilters devuelve -1 si el filtro no está activo", ()=>{
+    test("applyFilters devuelve el precio base si el filtro no está activo", ()=>{
 
         filtro_precio.activated = false;
-        expect(filtro_precio.applyFilters(tipo_conector,"usuario_test_id","estacion_test_id")).toBe(-1);
+        expect(filtro_precio.applyFilters(tipo_conector,"usuario_test_id","estacion_test_id")).toBe(filtro_precio.precio_base_kwh);
 
     });
 
