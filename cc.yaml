@@ -1,4 +1,4 @@
-EstacionServicio: src/classes/estacion-servicio.ts
-Impresion: src/classes/impresion.ts
-UsuarioParticular: src/classes/usuario-particular.ts
-Vehiculo: src/classes/vehiculo.ts
+entidad: [src/classes/estacion-servicio.ts, src/classes/impresion.ts, src/classes/usuario-particular.ts, src/classes/vehiculo.ts]
+lenguaje: Typescript
+test: [src/tests/coordenadas.test.ts, estacion-servicio.test.ts, filtro-precio.test.ts]
+fichero_tareas: Gruntfile.js
