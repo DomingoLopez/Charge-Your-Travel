@@ -54,7 +54,7 @@ Ejecutar los tests
 > grunt run:test
 
 Generar documentación
-    > grunt docco
+> grunt docco
 
 
 ## Documentación Adicional

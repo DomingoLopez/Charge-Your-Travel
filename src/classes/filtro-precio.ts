@@ -38,7 +38,7 @@ export class FiltroPrecio{
      * @param tipo_conector: tipo de conector que necesita el usuario para recargar
      * @param _id_estacion: identificador de la estación de servicio
      * @param _id_usuario: identificador del usuario
-     * @returns precio_final: -1 si no está activo el filtro o fuera de rango de fechas, precio_final si está activo
+     * @returns precio_final: precio base si no está activo el filtro o fuera de rango de fechas, precio_final si está activo
      */
     public applyFilters(tipo_conector: TipoConector, _id_estacion: string, _id_usuario:string): number{
         
@@ -49,7 +49,7 @@ export class FiltroPrecio{
 
             //TODO: Implementar consulta al FiltroPrecioService cuando se implemente la base de datos
             //total_recargas = FiltroPrecioService.getNumRecargas(_id_estacion,_id_usuario, fecha_ini,fecha_fin)
-            let mock_total_recargas: number = 2;
+            const mock_total_recargas: number = 2;
             let descuento_aplicable = this.base_discount_percent + (mock_total_recargas*this.inc_discount_percent);
             let total_discount = descuento_aplicable > this.max_discount_percent ? this.max_discount_percent : descuento_aplicable;
             
@@ -59,7 +59,7 @@ export class FiltroPrecio{
                     (this.precio_base_kwh - (this.precio_base_kwh*total_discount));
 
         }else{
-            return -1;
+            return this.precio_base_kwh;
         }
     }
 
