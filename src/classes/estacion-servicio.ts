@@ -30,7 +30,7 @@ export class EstacionServicio{
      * @returns true si se dispone de ese conector, false en caso contrario
      */
     public hasConnector(tipoConector: TipoConector): boolean{
-        throw new Error("not Implemented")
+        return this.tipo_conector.filter( (conector:TipoConector) => conector == tipoConector).length > 0 ? true : false;
     }
 
     /**
@@ -42,7 +42,7 @@ export class EstacionServicio{
      * @returns precio_final: -1 si no está activo el filtro o fuera de rango de fechas, precio_final si está activo
      */
     public getPriceFilteredByUser(tipo_conector: TipoConector,_id_usuario: string, _id_estacion: string): number {
-        throw new Error("not Implemented")
+       return this.filtro_precio.applyFilters(tipo_conector,_id_usuario,_id_estacion);
     }
   
     /**
@@ -51,7 +51,7 @@ export class EstacionServicio{
      * @returns distancia a la estación
      */
     public getDistanceToStation(coordenadas_origen:  Coordenadas): number{
-        throw new Error("not Implemented")
+        return this.coord.calculaDistancia(coordenadas_origen);
     }
 
     
