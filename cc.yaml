@@ -1,4 +1,4 @@
-entidad: [src/classes/estacion-servicio.ts, src/classes/impresion.ts, src/classes/usuario-particular.ts, src/classes/vehiculo.ts]
+entidad: [src/estacion-servicio.ts, src/impresion.ts, src/usuario-particular.ts, src/vehiculo.ts]
 lenguaje: Typescript
 test: [src/tests/coordenadas.test.ts, src/tests/estacion-servicio.test.ts, src/tests/filtro-precio.test.ts]
 fichero_tareas: Gruntfile.js

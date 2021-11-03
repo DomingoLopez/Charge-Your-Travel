@@ -1,7 +1,7 @@
-import { FiltroPrecio } from '../classes/filtro-precio';
-import { TipoConector } from '../classes/enum/tipo-conector';
-import { Coordenadas } from '../classes/coordenadas';
-import { EstacionServicio } from '../classes/estacion-servicio';
+import { FiltroPrecio } from '../filtro-precio';
+import { TipoConector } from '../enum/tipo-conector';
+import { Coordenadas } from '../coordenadas';
+import { EstacionServicio } from '../estacion-servicio';
 
 
 describe('FiltroPrecio tests', () => {
