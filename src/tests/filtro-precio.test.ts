@@ -9,7 +9,7 @@ describe('FiltroPrecio tests', () => {
     let tipo_conector = TipoConector.CHADEMO;
 
     /*Parámetros de un objeto FiltroPrecio*/
-    let params : {
+    interface TestInterface {
         precio_base_kwh: number, 
         base_discount_percent: number,
         inc_discount_percent: number,
@@ -17,7 +17,8 @@ describe('FiltroPrecio tests', () => {
         activated: boolean,
         fecha_ini: string,
         fecha_fin: string
-    };
+    }
+    let test_int : TestInterface;
 
     beforeAll(()=>{
 
@@ -26,7 +27,7 @@ describe('FiltroPrecio tests', () => {
         fecha_inicio.setDate(fecha_inicio.getDate() - 30);
         fecha_final.setDate(fecha_final.getDate() + 30);
 
-        params = {
+        test_int = {
             precio_base_kwh: 0.14, 
             base_discount_percent: 0.05,
             inc_discount_percent: 0.03,
@@ -35,22 +36,23 @@ describe('FiltroPrecio tests', () => {
             fecha_ini: fecha_inicio.toISOString(),
             fecha_fin:fecha_final.toISOString()
         }
+
         filtro_precio = new FiltroPrecio(
-           params.precio_base_kwh,
-           params.base_discount_percent,
-           params.inc_discount_percent,
-           params.max_discount_percent,
-           params.activated,
-           params.fecha_ini,
-           params.fecha_fin
+           test_int.precio_base_kwh,
+           test_int.base_discount_percent,
+           test_int.inc_discount_percent,
+           test_int.max_discount_percent,
+           test_int.activated,
+           test_int.fecha_ini,
+           test_int.fecha_fin
         );
     });
 
 
     afterEach(()=>{
 
-        filtro_precio.fecha_ini = params.fecha_ini;
-        filtro_precio.fecha_fin = params.fecha_fin;
+        filtro_precio.fecha_ini = test_int.fecha_ini;
+        filtro_precio.fecha_fin = test_int.fecha_fin;
         tipo_conector = TipoConector.CHADEMO;
         filtro_precio.activated = true;
 
@@ -59,13 +61,13 @@ describe('FiltroPrecio tests', () => {
 
     test("FiltroPrecio debe crearse correctamente", () =>{
 
-        expect(filtro_precio.precio_base_kwh).toBe(params.precio_base_kwh);
-        expect(filtro_precio.base_discount_percent).toBe(params.base_discount_percent);
-        expect(filtro_precio.inc_discount_percent).toBe(params.inc_discount_percent);
-        expect(filtro_precio.max_discount_percent).toBe(params.max_discount_percent);
-        expect(filtro_precio.activated).toBe(params.activated);
-        expect(filtro_precio.fecha_ini).toBe(params.fecha_ini);
-        expect(filtro_precio.fecha_fin).toBe(params.fecha_fin);
+        expect(filtro_precio.precio_base_kwh).toBe(test_int.precio_base_kwh);
+        expect(filtro_precio.base_discount_percent).toBe(test_int.base_discount_percent);
+        expect(filtro_precio.inc_discount_percent).toBe(test_int.inc_discount_percent);
+        expect(filtro_precio.max_discount_percent).toBe(test_int.max_discount_percent);
+        expect(filtro_precio.activated).toBe(test_int.activated);
+        expect(filtro_precio.fecha_ini).toBe(test_int.fecha_ini);
+        expect(filtro_precio.fecha_fin).toBe(test_int.fecha_fin);
     });
 
     

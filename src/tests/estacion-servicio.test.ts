@@ -26,16 +26,18 @@ describe('FiltroPrecio tests', () => {
     );
 
     /*Parámetros de un objeto EstacionServicio*/
-    let params : {
+    interface TestInterface {
         _id: string, 
         coord: Coordenadas,
         filtro_precio: FiltroPrecio,
         tipo_conector: TipoConector []
-    };
+    }
+    let test_int : TestInterface;
+    
 
     beforeAll(()=>{
 
-        params = {
+        test_int = {
             _id: 'id_estacion', 
             coord: coordenadas,
             filtro_precio: filtro_precio,
@@ -43,10 +45,10 @@ describe('FiltroPrecio tests', () => {
         }
 
         estacion_servicio = new EstacionServicio(
-           params._id,
-           params.coord,
-           params.filtro_precio,
-           params.tipo_conector           
+            test_int._id,
+            test_int.coord,
+            test_int.filtro_precio,
+            test_int.tipo_conector           
         );
     });
 
@@ -60,10 +62,10 @@ describe('FiltroPrecio tests', () => {
 
     test("Estación de servicio debe crearse correctamente", () =>{
 
-        expect(estacion_servicio._id).toBe(params._id);
-        expect(estacion_servicio.coord).toBe(params.coord);
-        expect(estacion_servicio.filtro_precio).toBe(params.filtro_precio);
-        expect(estacion_servicio.tipo_conector).toBe(params.tipo_conector);
+        expect(estacion_servicio._id).toBe(test_int._id);
+        expect(estacion_servicio.coord).toBe(test_int.coord);
+        expect(estacion_servicio.filtro_precio).toBe(test_int.filtro_precio);
+        expect(estacion_servicio.tipo_conector).toBe(test_int.tipo_conector);
        
     });
 
