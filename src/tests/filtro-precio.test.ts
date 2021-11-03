@@ -1,5 +1,5 @@
-import { FiltroPrecio } from '../classes/filtro-precio';
-import { TipoConector } from '../classes/enum/tipo-conector';
+import { FiltroPrecio } from '../filtro-precio';
+import { TipoConector } from '../enum/tipo-conector';
 
 
 describe('FiltroPrecio tests', () => {

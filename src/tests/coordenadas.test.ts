@@ -1,4 +1,4 @@
-import { Coordenadas } from '../classes/coordenadas';
+import { Coordenadas } from '../coordenadas';
 
 
 describe('Coordenadas tests', () => {
