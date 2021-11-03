@@ -9,32 +9,37 @@ describe('Coordenadas tests', () => {
         lon: number
     };
 
+    interface TestInterface {
+        lat: number,
+        lon: number
+    };
+    let test_int : TestInterface;
+
     let coordenadas: Coordenadas;
 
     beforeAll(()=>{
-        params = {
-            lat: -4.85,
-            lon: 3.558
-        }
+
+        test_int = {lat: -4.85, lon:3.558};
+
         coordenadas = new Coordenadas(
-           params.lat,
-           params.lon
+           test_int.lat,
+           test_int.lon
         );
     });
 
 
     afterEach(()=>{
 
-        coordenadas.lat = params.lat;
-        coordenadas.lon = params.lon;
+        coordenadas.lat = test_int.lat;
+        coordenadas.lon = test_int.lon;
 
     });
 
 
     test("Coordenadas debe crearse correctamente", () =>{
 
-        expect(coordenadas.lat).toBe(params.lat);
-        expect(coordenadas.lon).toBe(params.lon);
+        expect(coordenadas.lat).toBe(test_int.lat);
+        expect(coordenadas.lon).toBe(test_int.lon);
         
     });
 
