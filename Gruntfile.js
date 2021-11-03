@@ -17,7 +17,7 @@ module.exports = function(grunt){
         },
         ts: {
             build: {
-                src: ["src/**/*.ts", "!node_modules/**/*.ts"],
+                src: ["src/**/*.ts", "!node_modules/**/*.ts", "!src/tests/*.ts"],
                 dest: "build/",
                 options: {
                     module: 'commonjs',
