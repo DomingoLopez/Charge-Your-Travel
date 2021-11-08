@@ -1,4 +1,11 @@
-entidad: [src/estacion-servicio.ts, src/impresion.ts, src/usuario-particular.ts, src/vehiculo.ts]
+entidad: 
+  - src/estacion-servicio.ts 
+  - src/impresion.ts
+  - src/usuario-particular.ts
+  - src/vehiculo.ts
 lenguaje: Typescript
-test: [src/tests/coordenadas.test.ts, src/tests/estacion-servicio.test.ts, src/tests/filtro-precio.test.ts]
+test: 
+  - src/tests/coordenadas.test.ts
+  - src/tests/estacion-servicio.test.ts
+  - src/tests/filtro-precio.test.ts
 fichero_tareas: Gruntfile.js
