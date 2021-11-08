@@ -31,7 +31,7 @@ A raíz de las HU se propone la primera versión del [Diagrama de clases del sis
 
 ## Implementación
 
-Para la implementación de los distintos componentes del sistema se utilizará un enfoque [TDD](https://es.wikipedia.org/wiki/Desarrollo_guiado_por_pruebas), así como distintas herramientas para construir, automatizar y testear las distintas implementaciones que se llevarán a cabo. Puede verse una descripción completa de las herramientas utilizadas en el proyecto en la [descripción de la Implementación](doc/implementation.md). Para resumir, utilizaremos:
+Para la implementación de los distintos componentes del sistema se utilizará un enfoque [TDD](https://es.wikipedia.org/wiki/Desarrollo_guiado_por_pruebas), así como distintas herramientas para construir, automatizar y testear las distintas implementaciones que se llevarán a cabo. Puede verse una descripción completa de las herramientas utilizadas en el proyecto en la [descripción de la Implementación](doc/implementation.md), comparando y justificando las opciones elegidas. Para resumir, utilizaremos:
 - [Grunt](https://gruntjs.com/) como *Task runner*
 - [Jest](https://jestjs.io/es-ES/) como *Framework de test*
 - [npm](https://www.npmjs.com/) como *Gestor de dependencias*
@@ -39,7 +39,7 @@ Para la implementación de los distintos componentes del sistema se utilizará u
 
 En este [enlace](doc/additional_doc/tdd.md) puede verse la forma de seguir la metodología TDD con capturas de pantalla, aplicando tests con **Jest** a una clase particular descrita en la lógica de negocio del proyecto. 
 
-El gestor de tareas escogido (**Grunt**) nos permite registrar una serie de tareas que pueden ser ejecutadas de manera muy sencilla y ayudarán a gestionar archivos, limpiar el proyecto, trasnpilar o generar documentación:
+El gestor de tareas escogido (**Grunt**) nos permite registrar una serie de tareas que pueden ser ejecutadas de manera muy sencilla y ayudarán a gestionar archivos, limpiar el proyecto, transpilar o generar documentación:
 
 Instalar dependencias del proyecto
 > grunt run:install
