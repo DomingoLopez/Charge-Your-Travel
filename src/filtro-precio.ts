@@ -38,19 +38,18 @@ export class FiltroPrecio{
      * @param tipo_conector: tipo de conector que necesita el usuario para recargar
      * @param _id_estacion: identificador de la estación de servicio
      * @param _id_usuario: identificador del usuario
+     * @param total_recargas: número de recargas que ha realizado el usuario en la estación de servicio durante el período fijado en el filtro si este está activo
      * @returns precio_final: precio base si no está activo el filtro o fuera de rango de fechas, precio_final si está activo
      */
-    public applyFilters(tipo_conector: TipoConector, _id_estacion: string, _id_usuario:string): number{
+    public applyFilters(tipo_conector: TipoConector, _id_estacion: string, _id_usuario:string, total_recargas:number): number{
         
         let fecha_consulta : Date = new Date();
         if( this.activated && 
             fecha_consulta >= new Date(this.fecha_ini) && 
             fecha_consulta <= new Date(this.fecha_fin) ){
 
-            //TODO: Implementar consulta al FiltroPrecioService cuando se implemente la base de datos
-            //total_recargas = FiltroPrecioService.getNumRecargas(_id_estacion,_id_usuario, fecha_ini,fecha_fin)
-            const mock_total_recargas: number = 2;
-            let descuento_aplicable = this.base_discount_percent + (mock_total_recargas*this.inc_discount_percent);
+    
+            let descuento_aplicable = this.base_discount_percent + (total_recargas*this.inc_discount_percent);
             let total_discount = descuento_aplicable > this.max_discount_percent ? this.max_discount_percent : descuento_aplicable;
             
             //Si el conector es carga rápida el precio se incrementa un 21%
