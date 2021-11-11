@@ -24,34 +24,78 @@ export class EstacionServicio{
 
 
     /**
-     * Método para saber si se dispone de ese tipo de conector en la estación 
-     * de servicio.
-     * @param tipoConector: tipo de conector a consultar
-     * @returns true si se dispone de ese conector, false en caso contrario
+     * Método para comprobar si la estación de servicio es alcanzable
+     * por el vehículo dad su autonomía actual
+     * 
+     * @param autonomia_vehiculo autonomía del vehículo
+     * @param coordenadas coordenadas del vehículo
      */
-    public hasConnector(tipoConector: TipoConector): boolean{
-        return this.tipo_conector.filter( (conector:TipoConector) => conector == tipoConector).length > 0 ? true : false;
+    public isReachable(autonomia_vehiculo: number, coordenadas: Coordenadas): Boolean {
+        return this.coord.calculaDistancia(coordenadas) <= autonomia_vehiculo ? true : false;
     }
 
+
+
+
+    // /**
+    //  * Método que llama al Repositorio de datos para obtener las recargas de un usuario en la estación durante las
+    //  * fechas de activación del filtro si está en rango y si está activo.
+    //  * 
+    //  * Se implementará una vez se definan los repositorios de datos
+    //  * 
+    //  * @param _id_usuario identificador del usuario
+    //  */
+    // public getTotalRecargasPorUsuario(_id_usuario: string): number{
+    //     throw new Error("Not Implemented yet");
+    // }
+
+
+
+
+
     /**
-     * Obtiene el precio final del kwh de la estación en función de 
-     * las veces que haya recargado un usuario y el tipo de conector.
-     * @param tipo_conector: tipo de conector que necesita el usuario para recargar
-     * @param _id_estacion: identificador de la estación de servicio
+     * Obtiene las estaciones de servicio más cercanas al usuario que no sobrepasen el límite 
+     * de autonomía del vehículo y que dispongan del tipo de conector indicado por el usuario.
+     * Además, deben estar ordenadas en función del precio_kw*distancia a la estación descendente
      * @param _id_usuario: identificador del usuario
-     * @returns precio_final: -1 si no está activo el filtro o fuera de rango de fechas, precio_final si está activo
+     * @param tipo_conector: identificador del usuario
+     * @param coordenadas: Coordenadas del usuario
+     * @param autonomia_vehiculo: Autonomía actual en km del vehículo
+     * @param estaciones: Array de estaciones a analizar
+     * @returns EstacionServicio[], array de estaciones filtradas y ordenadas
      */
-    public getPriceFilteredByUser(tipo_conector: TipoConector,_id_usuario: string, _id_estacion: string): number {
-       return this.filtro_precio.applyFilters(tipo_conector,_id_usuario,_id_estacion);
-    }
-  
-    /**
-     * Obtiene distancia a la estación
-     * @param coordenadas_origen: coordenadas
-     * @returns distancia a la estación
-     */
-    public getDistanceToStation(coordenadas_origen:  Coordenadas): number{
-        return this.coord.calculaDistancia(coordenadas_origen);
+    public static getEstacionesPrioritarias(
+        _id_usuario: string, 
+        tipo_conector: TipoConector, 
+        coordenadas: Coordenadas, 
+        autonomia_vehiculo: number, 
+        estaciones: EstacionServicio []
+    ): EstacionServicio[]
+    {
+        //Filtramos para quedarnos con las estaciones que tienen el tipo de conector requerido
+        let estaciones_filtradas : EstacionServicio [] = estaciones.filter(estacion => estacion.tipo_conector.includes(tipo_conector));
+        estaciones_filtradas = estaciones_filtradas.filter(estacion => estacion.isReachable(autonomia_vehiculo,coordenadas));
+
+        estaciones_filtradas = estaciones_filtradas.sort((estacion1,estacion2)=>{
+            //Cálculo para estación 1
+            //let total_recargas_por_usuario_est1 = estacion1.getTotalRecargasPorUsuario(_id_usuario)|0;
+            const total_recargas_por_usuario_est1 = 0;
+            let precio_total_est1 = estacion1.filtro_precio.applyFilters(tipo_conector,total_recargas_por_usuario_est1);
+            let distance_est1 = estacion1.coord.calculaDistancia(coordenadas);
+
+            //Cálculo para estacion 2
+            //let total_recargas_por_usuario_est2 = estacion1.getTotalRecargasPorUsuario(_id_usuario)|0;
+            const total_recargas_por_usuario_est2 = 0;
+            let precio_total_est2 = estacion2.filtro_precio.applyFilters(tipo_conector,total_recargas_por_usuario_est2);
+            let distance_est2 = estacion2.coord.calculaDistancia(coordenadas);
+
+            
+            return precio_total_est1*distance_est1 < precio_total_est2*distance_est2 ? -1 : 1;
+        });
+
+        return estaciones_filtradas;
+
+
     }
 
     

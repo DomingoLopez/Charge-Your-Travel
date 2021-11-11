@@ -85,28 +85,28 @@ describe('FiltroPrecio tests', () => {
         //Recargas que ha podido tener el usuario
         const mock_total_recargas = 2;
 
-        expect(filtro_precio.applyFilters(tipo_conector,"usuario_test_id","estacion_test_id",mock_total_recargas)).toBe(filtro_precio.precio_base_kwh);
+        expect(filtro_precio.applyFilters(tipo_conector,mock_total_recargas)).toBe(filtro_precio.precio_base_kwh);
 
     });
 
     test("applyFilters devuelve el precio base si el filtro no está activo", ()=>{
 
         filtro_precio.activated = false;
-        expect(filtro_precio.applyFilters(tipo_conector,"usuario_test_id","estacion_test_id",mock_total_recargas)).toBe(filtro_precio.precio_base_kwh);
+        expect(filtro_precio.applyFilters(tipo_conector,mock_total_recargas)).toBe(filtro_precio.precio_base_kwh);
 
     });
 
     test("applyFilters devuelve precio del kwh descontado si la fecha actual está en rango de las fechas del filtro y este está activado", ()=>{
 
-        expect(filtro_precio.applyFilters(tipo_conector,"usuario_test_id","estacion_test_id",mock_total_recargas)).toBeGreaterThanOrEqual(0);
+        expect(filtro_precio.applyFilters(tipo_conector,mock_total_recargas)).toBeGreaterThanOrEqual(0);
 
     });
 
     test("applyFilters devuelve precio del kwh descontado y con un 21% de cargo si el conetor es de tipo CARGA_RAPIDA", ()=>{
 
-        let total_discount = filtro_precio.applyFilters(tipo_conector,"usuario_test_id","estacion_test_id",mock_total_recargas);
+        let total_discount = filtro_precio.applyFilters(tipo_conector,mock_total_recargas);
         tipo_conector = TipoConector.CARGA_RAPIDA;
-        expect(filtro_precio.applyFilters(tipo_conector,"usuario_test_id","estacion_test_id",mock_total_recargas)).toBe(total_discount*1.21);
+        expect(filtro_precio.applyFilters(tipo_conector,mock_total_recargas)).toBe(total_discount*1.21);
 
     });
 

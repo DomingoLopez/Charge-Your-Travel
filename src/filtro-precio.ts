@@ -41,7 +41,7 @@ export class FiltroPrecio{
      * @param total_recargas: número de recargas que ha realizado el usuario en la estación de servicio durante el período fijado en el filtro si este está activo
      * @returns precio_final: precio base si no está activo el filtro o fuera de rango de fechas, precio_final si está activo
      */
-    public applyFilters(tipo_conector: TipoConector, _id_estacion: string, _id_usuario:string, total_recargas:number): number{
+    public applyFilters(tipo_conector: TipoConector, total_recargas:number): number{
         
         let fecha_consulta : Date = new Date();
         if( this.activated && 
