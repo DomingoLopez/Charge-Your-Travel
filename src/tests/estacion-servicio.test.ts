@@ -4,7 +4,7 @@ import { Coordenadas } from '../coordenadas';
 import { EstacionServicio } from '../estacion-servicio';
 
 
-describe('FiltroPrecio tests', () => {
+describe('EstacionServicio tests', () => {
 
     /*Inicializamos parámetros*/
     let fecha_inicio: Date = new Date();
