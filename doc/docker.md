@@ -33,16 +33,15 @@ Vamos a comparar la anterior imagen de Typescript y algunas imágenes de linux:
 ![Alpine imagen docker](img/alpine-img-docker.png)
 - NodeJS slim
 ![NodeJs Slim](img/node-img-docker.png)
--Imagen Typescript con más estrellas
+- NodeJS Alpine
+![NodeJs Alpine](img/node-alpine-img-docker.png)
+- Imagen Typescript con más estrellas
 ![Imagen Typescript Docker](img/typescript-img-docker.png)
 
 
-Como se observa la imagen de menor tamaño (5.3M) es Alpine (versión major 3.14). El *inconveniente* (que a la vez es su mayor ventaja) de Alpine es que no trae absolutamente ningún paquete instalado, siendo considerada como una de las imágenes más livianas disponibles en DockerHub.
+Como se observa la imagen de menor tamaño (5.3M) es Alpine (versión major 3.14). El *inconveniente* (que a la vez es su mayor ventaja) de Alpine es que no trae absolutamente ningún paquete instalado, siendo considerada como una de las imágenes más livianas disponibles en DockerHub. Deberíamos instalar nodejs como mínimo en el contenedor, así como las herramientas que necesite NodeJs.
 
-Tanto Alpine como la imagen de NodeJs me parecen buena elección, pero la de NodeJS slim contiene multitud de paquetes que no nos van a servir, aunque ya viene con NodeJS instalado que deberemos instalar en Alpine.
-
-En este caso **la opción más razonable es elegir Alpine e ir añadiendo los paquetes mínimos y necesarios para nuestro proyecto**. 
-
+Tanto Alpine como la imagen de NodeJs-alpine (que es NodeJS sobre Alpine) me parecen buena elección. En este caso **la opción más razonable es elegir node:16.13.0-alpine, que incluye exclusivamente lo necesario para disponer de un entorno con NodeJS con la última versión lts, y es lo recomendado en la [documentación de NodeJs en DockerHub](https://hub.docker.com/_/node?tab=description)**
 ## Algunas prácticas interesantes
 
 Un artículo que circula por la red y me ha parecido interesante es el [siguiente](https://medium.com/@michalozogan/how-to-build-the-smallest-docker-typescript-image-a9a84d17e6b4), donde se incita a evitar utilizar imágenes con tag *latest* ya que no estaríamos controlando actualizaciones mayores que se produzcan en el contenedor base, recomendando en cambio utilizar versiones *major*. 
