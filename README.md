@@ -65,7 +65,7 @@ Para poder crear una imagen personalizada del contenedor deberemos crear un Dock
 
 El primer paso para crear un Dockerfile es la elección del contenedor base ya que se debe evitar crear contenedores que tengan *más* de lo que el proyecto necesita, con el aumento del tamaño del contenedor que eso supondría. 
 
-La documentación de la elección del contenedor base se puede encontrar en el [siguiente enlace](doc/docker.md), donde se usa la herramienta [container-diff](https://github.com/GoogleContainerTools/container-diff) para analizar las distintas imágenes base que podrían servir para tal propósito. 
+La documentación de la elección del contenedor base se puede encontrar en el [siguiente enlace](doc/docker.md), donde se usa la herramienta [container-diff](https://github.com/GoogleContainerTools/container-diff) para analizar las distintas imágenes base que podrían servir para tal propósito. Tras la investigación, se ha optado por utilizar la imagen de **Alpine** en su versión *major* 3.14, evitando tags *latests* cuyas actualizaciones podrían hacer *tambalear* dependencias del proyecto.
 
 
 ## Documentación Adicional
@@ -86,7 +86,7 @@ La documentación de la elección del contenedor base se puede encontrar en el [
 
     > Justificación de la elección del contenedor base de entre los disponibles en DockerHub para el lanzamiento de los tests del proyecto.
 
-* [Github Actions para actualización automática en DockerHub](doc/docker.md)
+* [Github Actions para actualización automática en DockerHub](doc/github-actions.md)
 
     > Proceso seguido para crear una *Action* capaz de publicar nuestros cambios en la imagen del contenedor en DockerHub.    
 
