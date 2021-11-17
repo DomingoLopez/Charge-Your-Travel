@@ -57,15 +57,38 @@ Generar documentación
 > grunt docco
 
 
+## Dockerizando
+
+Se propone la creación de un contenedor utilizando Docker para la ejecución de los tests del código del proyecto. Para ello, se debe [instalar docker](https://docs.docker.com/engine/install/ubuntu/ ) y las dependencias necesarias que requiera nuestro sistema operativo. 
+
+Para poder crear una imagen personalizada del contenedor deberemos crear un Dockerfile, archivo que contempla una serie de órdenes que nos permitirán automatizar la creación de la imagen del contenedor, que posteriormente podremos subir a distintas plataformas como [DockerHub](https://hub.docker.com/) o [Github Container Registry](https://docs.github.com/es/packages/working-with-a-github-packages-registry/working-with-the-container-registry). 
+
+El primer paso para crear un Dockerfile es la elección del contenedor base ya que se debe evitar crear contenedores que tengan *más* de lo que el proyecto necesita, con el aumento del tamaño del contenedor que eso supondría. 
+
+La documentación de la elección del contenedor base se puede encontrar en el [siguiente enlace](doc/docker.md), donde se usa la herramienta [container-diff](https://github.com/GoogleContainerTools/container-diff) para analizar las distintas imágenes base que podrían servir para tal propósito. Tras la investigación, se ha optado por utilizar la imagen de **Alpine** en su versión *major* 3.14, evitando tags *latests* cuyas actualizaciones podrían hacer *tambalear* dependencias del proyecto.
+
+
 ## Documentación Adicional
 
 * [Configuración del entorno: Git y Github.](doc/additional_doc/configuracion-entorno.md)
 
     > Configuración de par de claves pública y privada para conexión ssh a github. Configuración de cuenta de github.
 
+* [Justificación de herramientas del proyecto](doc/implementation.md)
+
+    > Justificación de la elección de los Task runner, Test Framework y Package Manager
+
 * [Proceso TDD](doc/additional_doc/tdd.md)
 
     > Capturas de pantalla de test fallando, desarrollo del código y tests en verde (Red - Code - Green).
+
+* [Justificación del contenedor Base para los Tests](doc/docker.md)
+
+    > Justificación de la elección del contenedor base de entre los disponibles en DockerHub para el lanzamiento de los tests del proyecto.
+
+* [Github Actions para actualización automática en DockerHub](doc/github-actions.md)
+
+    > Proceso seguido para crear una *Action* capaz de publicar nuestros cambios en la imagen del contenedor en DockerHub.    
 
 ## Licencia
 
