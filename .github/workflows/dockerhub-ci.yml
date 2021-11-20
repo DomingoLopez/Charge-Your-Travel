@@ -14,11 +14,11 @@ jobs:
     steps:
     # Comprueba repo
     - name: Check repo
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
 
     - name: Login DockerHub
-        uses: docker/login-action@v1.10.0
-        with:
+      uses: docker/login-action@v1.10.0
+      with:
           username: ${{secrets.DOCKER_USER}}
           password: ${{secrets.DOCKER_PASSWORD}}
       
