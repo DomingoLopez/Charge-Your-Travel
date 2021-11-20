@@ -13,14 +13,14 @@ jobs:
         
     steps:
     # Comprueba repo
+    - name: Check repo
     - uses: actions/checkout@v2
-    
-    # Login en DockerHub con secrets. Se podría utilizar el action ya creado docker/login-action@v1.10.0 del marketplace
+
     - name: Login DockerHub
-      env: 
-        DOCKER_USER: ${{secrets.DOCKER_USER}}
-        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-      run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        uses: docker/login-action@v1.10.0
+        with:
+          username: ${{secrets.DOCKER_USER}}
+          password: ${{secrets.DOCKER_PASSWORD}}
       
     # Construcción y push a Dockerhub. Utilizarmos algún action del marketplace como
     # https://github.com/marketplace/actions/build-and-push-docker-images
