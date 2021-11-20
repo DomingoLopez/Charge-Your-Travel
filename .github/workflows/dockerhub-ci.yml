@@ -9,9 +9,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    env: 
-        DOCKER_USER: ${{secrets.DOCKER_USER}}
-        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+
         
     steps:
     # Comprueba repo
@@ -19,6 +17,9 @@ jobs:
     
     # Login en DockerHub con secrets. Se podría utilizar el action ya creado docker/login-action@v1.10.0 del marketplace
     - name: Login DockerHub
+      env: 
+        DOCKER_USER: ${{secrets.DOCKER_USER}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       
     # Construcción y push a Dockerhub. Utilizarmos algún action del marketplace como
@@ -28,6 +29,6 @@ jobs:
       with:
         context: .
         push: true
-        tags: $DOCKER_USER/charge-your-travel:latest
+        tags: ${{secrets.DOCKER_USER}}/charge-your-travel:latest
     
 

@@ -55,9 +55,15 @@ Este es el resultado:
 - Tamaño con alpine:3.14
 ![Imagen alpine](img/alpine_comp.png)
 
-Como puede verse, utilizando prácticamente el mismo Dockerfile (En la creación de la imagen de node:16.13.0-alpine no se instala nodejs ni npm, ya viene en la imagen) observamos que la imagen de node:16.13.0-alpine no es tan ligera como la de alpine instalando nodejs y npm a través del gestor de paquetes de alpine.
+Como puede verse, utilizando prácticamente el mismo Dockerfile (En la creación de la imagen de node:16.13.0-alpine no se instala nodejs ni npm, ya viene en la imagen) observamos que la imagen de node:16.13.0-alpine no es tan ligera como la de alpine instalando nodejs y npm a través del gestor de paquetes de alpine. 
+
+Esto se debe principalmente a que la imagen node:16.13.0-alpine instala otras dependencias y paquetes que en nuestro caso no son necesarias para el proyecto. Analizando con la herramienta **container-diff** también podemos ver el Dockerfile de node:16.13.0, en el que se instala make, python3, gpg, yarn, curl, etc.
 
 Por tanto, para este proyecto en particular se usará **alpine:3.14**.
+
+## Actualización automática en DockerHub a través de Github Actions
+
+
 
 ## Algunas prácticas interesantes
 
