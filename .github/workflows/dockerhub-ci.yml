@@ -32,3 +32,4 @@ jobs:
         tags: ${{secrets.DOCKER_USER}}/charge-your-travel:latest
     
 
+
