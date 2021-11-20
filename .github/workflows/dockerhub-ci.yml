@@ -1,0 +1,33 @@
+name: Publish Image on DockerHub on main branch push
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+    env: 
+        DOCKER_USER: ${{secrets.DOCKER_USER}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+        
+    steps:
+    # Comprueba repo
+    - uses: actions/checkout@v2
+    
+    # Login en DockerHub con secrets. Se podría utilizar el action ya creado docker/login-action@v1.10.0 del marketplace
+    - name: Login DockerHub
+      run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+      
+    # Construcción y push a Dockerhub. Utilizarmos algún action del marketplace como
+    # https://github.com/marketplace/actions/build-and-push-docker-images
+    - name: Push to DockerHub
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: true
+        tags: $DOCKER_USER/charge-your-travel:latest
+    
+
