@@ -26,18 +26,19 @@
     "@babel/preset-typescript": "^7.16.0",
     "@types/jest": "^27.0.2",
     "babel-jest": "^27.3.1",
+    "jest": "^27.3.1",
+    "jest-cli": "^27.3.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4",
+    "tsc": "^2.0.3"
+  },
+  "dependencies": {
     "docco": "^0.8.1",
     "grunt": "^1.4.1",
     "grunt-contrib-clean": "^2.0.0",
     "grunt-docco": "^0.5.0",
     "grunt-run": "^0.8.1",
-    "grunt-ts": "^6.0.0-beta.22",
-    "jest": "^27.3.1",
-    "jest-cli": "^27.3.1",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.4.4"
-  },
-  "dependencies": {
-    "tsc": "^2.0.3"
+    "grunt-ts": "^6.0.0-beta.22"
+   
   }
 }
