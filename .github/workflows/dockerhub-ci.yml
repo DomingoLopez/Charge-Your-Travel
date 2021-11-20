@@ -31,4 +31,5 @@ jobs:
         push: true
         tags: ${{secrets.DOCKER_USER}}/charge-your-travel:latest
     
+    
 
