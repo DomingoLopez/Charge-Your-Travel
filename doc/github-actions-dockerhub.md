@@ -26,5 +26,5 @@ La palabra reservada *uses* es común en las Github Actions ya que estamos indic
 
 > **docker/login-action@v1.10.0** : Action disponible en el marketplace de Github y oficial de Docker que hace login en la plataforma de registro de contenedores elegida. **Por defecto es DockerHub, para cambiarlo habría que añadir el key registry**. https://github.com/marketplace/actions/docker-login. En este caso necesita el nombre de usuario y la contraseña de DockerHUB, que previamente hemos guardado en las secrets del repositorio.
 
-> **docker/build-push-action@v2** : Action disponible en el marketplace de Github y oficial de Docker que construye y hace push de una imagen al repositorio de dockerhub. https://github.com/marketplace/actions/build-and-push-docker-images. 
+> **docker/build-push-action@v2** : Action disponible en el marketplace de Github y oficial de Docker que construye y hace push de una imagen al repositorio de dockerhub. https://github.com/marketplace/actions/build-and-push-docker-images. Notar la key *tags* que permite indicar la etiqueta de la imagen. Dado que no se trata de una *release* en particular, utilizamos la tag *latest* para indicar que es la última versión.
 
