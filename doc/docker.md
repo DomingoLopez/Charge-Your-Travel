@@ -61,10 +61,6 @@ Esto se debe principalmente a que la imagen node:16.13.0-alpine instala otras de
 
 Por tanto, para este proyecto en particular se usará **alpine:3.14**.
 
-## Actualización automática en DockerHub a través de Github Actions
-
-
-
 ## Algunas prácticas interesantes
 
 Un artículo que circula por la red y me ha parecido interesante es el [siguiente](https://medium.com/@michalozogan/how-to-build-the-smallest-docker-typescript-image-a9a84d17e6b4), donde se incita a evitar utilizar imágenes con tag *latest* ya que no estaríamos controlando actualizaciones mayores que se produzcan en el contenedor base, recomendando en cambio utilizar versiones *major*. 

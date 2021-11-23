@@ -67,6 +67,10 @@ El primer paso para crear un Dockerfile es la elección del contenedor base ya q
 
 La documentación de la elección del contenedor base se puede encontrar en el [siguiente enlace](doc/docker.md), donde se usa la herramienta [container-diff](https://github.com/GoogleContainerTools/container-diff) para analizar las distintas imágenes base que podrían servir para tal propósito. Tras la investigación, se ha optado por utilizar la imagen de **alpine:3.14**, evitando tags *latests* cuyas actualizaciones podrían hacer que surgieran incompatibilidades con las dependencias del proyecto.
 
+Una vez creada y testada la imagen se ha creado un *workflow* en Github a través de las *Github actions* para la actualización automática de la imagen cuando se haca un *push* en la rama principal (main). La documentación de este proceso puede verse en el [siguiente enlace](doc/github-actions-dockerhub.md).
+
+Adicionalmente, podemos utilizar registros alternativos para almacenar nuestras imágenes como puede ser *Github Container Registry*, donde también podemos programar la actualización automática a través de un workflow. La documentación de la actualización en este registro alternativo se encuentra en el [siguiente enlace](doc/github-actions-ghcr).
+
 
 ## Documentación Adicional
 
@@ -86,9 +90,13 @@ La documentación de la elección del contenedor base se puede encontrar en el [
 
     > Justificación de la elección del contenedor base de entre los disponibles en DockerHub para el lanzamiento de los tests del proyecto.
 
-* [Github Actions para actualización automática en DockerHub](doc/github-actions.md)
+* [Github Actions para actualización automática en DockerHub](doc/github-actions-dockerhub.md)
 
-    > Proceso seguido para crear una *Action* capaz de publicar nuestros cambios en la imagen del contenedor en DockerHub.    
+    > Proceso seguido para crear una *Action* capaz de publicar nuestros cambios en la imagen del contenedor en DockerHub.   
+
+* [Github Actions para actualización automática en Github Container Registry](doc/github-actions-ghcr.md)
+
+    > Proceso seguido para crear una *Action* capaz de publicar nuestros cambios en la imagen del contenedor en DockerHub.      
 
 ## Licencia
 
