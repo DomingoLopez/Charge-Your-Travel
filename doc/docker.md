@@ -11,7 +11,7 @@ En primer lugar, y dado que el proyecto está siendo desarrollado en Typescript,
 
 De todos los que aparecen podría servirnos la primera, ya que es la que más descargas tiene, así como estrellas. El problema es que utiliza bower, gulp, webpack...Herramientas que no se utilizan de momento en el proyecto. 
 
-Podría ser una buena imagen para un proyecto que vaya a *tiro hecho*, pero se necesita algo más *personalizado* para nuestro propósito. 
+Podría ser una buena imagen para un proyecto que vaya a *tiro hecho*, pero se necesita algo más *personalizado* para nuestro propósito. El objetivo es el de conseguir crear **la imagen más reducida de tamaño posible y que tenga lo indispensable para lanzar los tests**.
 
 Para este proyecto basado en Typescript, y que hace uso de NodeJs y npm es más interesante encontrar la imagen más liviana posible, para posteriormente instalar las dependencias del proyecto a través del *package.json*.
 
@@ -57,7 +57,7 @@ Este es el resultado:
 
 Como puede verse, utilizando prácticamente el mismo Dockerfile (En la creación de la imagen de node:16.13.0-alpine no se instala nodejs ni npm, ya viene en la imagen) observamos que la imagen de node:16.13.0-alpine no es tan ligera como la de alpine instalando nodejs y npm a través del gestor de paquetes de alpine. 
 
-Esto se debe principalmente a que la imagen node:16.13.0-alpine instala otras dependencias y paquetes que en nuestro caso no son necesarias para el proyecto. Analizando con la herramienta **container-diff** también podemos ver el Dockerfile de node:16.13.0, en el que se instala make, python3, gpg, yarn, curl, etc.
+Esto se debe principalmente a que la imagen node:16.13.0-alpine instala otras dependencias y paquetes que en nuestro caso no son necesarias para el proyecto. Analizando con la herramienta **container-diff** también **podemos ver el Dockerfile de node:16.13.0, en el que se instala make, python3, gpg, yarn, curl, etc. Son herramientas que no necesitamos en nuestra imagen.**
 
 Por tanto, para este proyecto en particular se usará **alpine:3.14**.
 
