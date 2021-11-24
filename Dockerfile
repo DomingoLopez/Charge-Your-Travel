@@ -24,4 +24,4 @@ WORKDIR /app/test
 
 VOLUME /app/test
 
-CMD ["npm","test"]
+CMD ["grunt","run:test"]
