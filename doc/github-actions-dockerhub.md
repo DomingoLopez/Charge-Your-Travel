@@ -12,6 +12,8 @@ Para ello, debemos acceder al apartado *Settings > Secrets* de nuestro repositor
 
 ![Secrets de Github](./img/gh-actions-dh-secrets.png)
 
+## Workflow
+
 Una vez establecidas podemos añadir un nuevo Workflow a nuestro repositorio accediendo al apartado *Actions > New Workflow* que nos permitirá crear una serie de pasos a ejecutar por el entorno que proporciona Github. Este Workflow se programa en el *lenguaje* YML y la documentación de Github Actions puede encontrarse [aquí](https://docs.github.com/es/actions).
 
 ![Workflow para actualización automática de imagen en DockerHub](./img/gh-actions-dh-workflow.png)
