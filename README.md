@@ -96,7 +96,7 @@ Adicionalmente, podemos utilizar registros alternativos para almacenar nuestras 
 
 * [Github Actions para actualización automática en Github Container Registry](doc/github-actions-ghcr.md)
 
-    > Proceso seguido para crear una *Action* capaz de publicar nuestros cambios en la imagen del contenedor en DockerHub.      
+    > Proceso seguido para crear una *Action* capaz de publicar nuestros cambios en la imagen del contenedor en Github Container Registry, actualizando el *package* del repositorio.      
 
 ## Licencia
 
