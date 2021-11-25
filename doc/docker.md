@@ -29,12 +29,16 @@ Vamos a comparar la anterior imagen de Typescript y algunas imágenes de linux:
 
 - Ubuntu bionic
 ![Ubuntu bionic imagen docker](img/ubuntu-img-bionic.png)
+
 - Alpine@3.14
 ![Alpine imagen docker](img/alpine-img-docker.png)
+
 - NodeJS slim
 ![NodeJs Slim](img/node-img-docker.png)
+
 - NodeJS Alpine
 ![NodeJs Alpine](img/node-alpine-img-docker.png)
+
 - Imagen Typescript con más estrellas
 ![Imagen Typescript Docker](img/typescript-img-docker.png)
 
